@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="h-full flex items-center justify-center">
       <div>
-        <h1 className="uppercase text text-center text-4xl font-extrabold">
+        <h1 className="uppercase text text-center text-2xl sm:text-3xl md:text-4xl font-extrabold">
           I'm Tanin Rahman
         </h1>
         <TypeAnimation
@@ -20,7 +20,7 @@ const Home = () => {
             1000,
           ]}
           speed={50}
-          style={{ fontSize: "1em" , textAlign: 'center', marginLeft: "80px"}}
+          className='ml-6 md:ml-14 text-sm md:text-xl'
           wrapper="span"
           repeat={Infinity}
         />
