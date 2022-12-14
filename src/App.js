@@ -4,6 +4,9 @@ import Main from './Layout/Main';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
+import BecheDaw from './Pages/Project/BecheDaw';
+import SmartTutor from './Pages/Project/SmartTutor';
+import StudyTrend from './Pages/Project/StudyTrend';
 import Projects from './Pages/Projects/Projects';
 
 function App() {
@@ -23,6 +26,18 @@ function App() {
         {
           path: '/projects',
           element: <Projects></Projects>
+        },
+        {
+          path: '/projects/becheDaw',
+          element: <BecheDaw></BecheDaw>
+        },
+        {
+          path: '/projects/smartTutor',
+          element: <SmartTutor></SmartTutor>
+        },
+        {
+          path: '/projects/studyTrend',
+          element: <StudyTrend></StudyTrend>
         },
         {
           path: '/contact',

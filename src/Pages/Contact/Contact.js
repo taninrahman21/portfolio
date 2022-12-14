@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaAt, FaFontAwesomeFlag, FaPhone } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import { toast, Toaster } from 'react-hot-toast';
 
 const Contact = () => {
   const sendMail = event => {
@@ -9,13 +10,14 @@ const Contact = () => {
 
     emailjs.sendForm('service_gglur1k', 'template_p6jbn2a', event.target, 'CWptppKFInt4dU_tl')
     .then(res => {
-      alert('Got your message.Thank You.');
+      toast.success('Got your message.Thank You.');
       event.target.reset();
     }).catch(error => console.error(error));
 
   }
   return (
     <div className='mt-44 mb-20 w-3/4 mx-auto'>
+    <Toaster position="top-center" reverseOrder={false}/>
        <div className='text-center'>
         <h2 className='font-extrabold uppercase text-4xl'>Contacts</h2>
         <p>Home / Contact Me</p>
