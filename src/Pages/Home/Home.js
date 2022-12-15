@@ -18,6 +18,8 @@ const Home = () => {
             1000,
             "React Developer",
             1000,
+            "MERN Stack Web Developer",
+            1000,
           ]}
           speed={50}
           className='ml-6 md:ml-14 text-sm md:text-xl'
