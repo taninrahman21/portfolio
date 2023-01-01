@@ -32,9 +32,9 @@ const BecheDaw = () => {
           </div>
         </div>
 
-        <div className='w-full mt-8 lg:mt-0 lg:w-1/4 lg:pr-5'>
+        <div className='w-full my-8 lg:mt-0 lg:w-1/4 lg:pr-5'>
           <h3 className="font-bold text-xl">Details</h3>
-          <div>
+
             <div>
               <h4 className='font-semibold mt-3'>Live Site</h4>
               <a href="https://beche-daw.web.app" rel="noreferrer" target='_blank'>beche-daw.web.app</a>
@@ -42,14 +42,14 @@ const BecheDaw = () => {
 
            <div>
             <h4 className='font-semibold mt-3'>Client Side Code</h4>
-              <a href="https://github.com/taninrahman21/used-product-resale-client" rel="noreferrer" target='_blank'>github.com/taninrahman21/used-product-resale-client</a>
+            <a href="https://github.com/taninrahman21/used-product-resale-client" rel="noreferrer" target='_blank'>github.com/taninrahman21/-used-product-resale-client</a>
            </div>
 
            <div>
              <h4 className='font-semibold mt-3'>Server Side Code</h4>
-             <a href="https://github.com/taninrahman21/used-product-resale-server" rel="noreferrer" target='_blank'>github.com/taninrahman21/used-product-resale-server</a>
+            <a href="https://github.com/taninrahman21/used-product-resale-server" rel="noreferrer" target='_blank'>github.com/taninrahman21/-used-product-resale-server</a>
            </div>
-          </div>
+
         </div>
       </div>
 

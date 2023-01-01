@@ -30,7 +30,7 @@ const SmartTutor = () => {
         </div>
       </div>
 
-      <div className='w-full mt-8 lg:mt-0 lg:w-1/4 lg:pr-5'>
+      <div className='w-full my-8 lg:mt-0 lg:w-1/4 lg:pr-5'>
         <h3 className="font-bold text-xl">Details</h3>
         <div>
           <div>
@@ -40,12 +40,12 @@ const SmartTutor = () => {
 
          <div>
           <h4 className='font-semibold mt-3'>Client Side Code</h4>
-            <a href="https://github.com/taninrahman21/study-trend-client" rel="noreferrer" target='_blank'>github.com/taninrahman21/study-trend-tutor-client</a>
+            <a href="https://github.com/taninrahman21/study-trend-client" rel="noreferrer" target='_blank'>github.com/taninrahman21/-study-trend-tutor-client</a>
          </div>
 
          <div>
            <h4 className='font-semibold mt-3'>Server Side Code</h4>
-           <a href="https://github.com/taninrahman21/study-trend-server" rel="noreferrer" target='_blank'>github.com/taninrahman21/study-trend-server</a>
+           <a href="https://github.com/taninrahman21/study-trend-server" rel="noreferrer" target='_blank'>github.com/taninrahman21/-study-trend-server</a>
          </div>
         </div>
       </div>
