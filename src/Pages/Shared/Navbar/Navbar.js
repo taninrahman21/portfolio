@@ -6,7 +6,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   
   return (
-    <div className="sticky top-0 bg-white z-20 px-8">
+    <div className="sticky top-0 bg-white z-20 px-3 md:px-8">
       <nav className="px-2 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link to="/" className="text-xl md:text-[20px] font-semibold lg:text-2xl">
@@ -16,13 +16,13 @@ const Navbar = () => {
             onClick={() => setOpen(!open)}
             data-collapse-toggle="navbar-sticky"
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700"
             aria-controls="navbar-sticky"
             aria-expanded="true"
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 20 20"
@@ -43,7 +43,7 @@ const Navbar = () => {
           >
             {/* make sure will add animation last time */}
             <ul className="flex flex-col text-gray-500 md:py-2 text-[14px] lg:text-sm mt-4 md:flex-row md:space-x-8 md:mt-0 xl:text-lg md:font-medium">
-              <li className=' pb-3 md:pb-0'>
+              <li className='pb-3 md:pb-0'>
                 <NavLink
                   to="/home"
                   className='hover:text-[#f26b38]'
@@ -80,7 +80,7 @@ const Navbar = () => {
                   href='https://drive.google.com/file/d/1mml-5tbGmERS65eaqPaRmj8-_e1sMJl1/view?usp=share_link'
                   className='hover:text-[#f26b38]'
                 >
-                  Download Resume
+                Download Resume
                 </a>
               </li>
             </ul>

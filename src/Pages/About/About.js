@@ -11,10 +11,10 @@ const About = () => {
         <p>Home / About Me</p>
       </div>
 
-      <div className="mt-24 px-6 w-[90%] lg:w-3/4 mx-auto">
+      <div className="mt-24 px-2 md:px-6 w-[90%] lg:w-3/4 mx-auto">
         <h2 className="font-bold text-xl">About Information</h2>
         {/* Profile Information */}
-        <div className="mt-8 flex justify-center items-center md:items-start flex-col md:flex-row">
+        <div className="mt-5 md:mt-8 flex justify-center items-center md:items-start flex-col md:flex-row">
           <div className="md:mr-5">
             <img
               className="w-[150px] md:w-[200px] rounded-full"
@@ -50,8 +50,8 @@ const About = () => {
             </div>
 
             <button className="px-4 mt-4 py-2 block mx-auto md:mx-0 bg-[#f26b38] text-white">
-              <a href="https://drive.google.com/file/d/ 1mml-5tbGmERS65eaqPaRmj8-_e1sMJl1/view?usp=share_link">
-                Download Resume
+              <a href='https://drive.google.com/file/d/1mml-5tbGmERS65eaqPaRmj8-_e1sMJl1/view?usp=share_link'>
+              Download Resume
               </a>
             </button>
           </div>
@@ -149,7 +149,7 @@ const About = () => {
         <div className="mt-16 ">
            <h2 className="font-bold text-xl">Knowledge</h2>
 
-           <div className="mt-5 grid grid-cols-2">
+           <div className="mt-5 grid grid-cols-1 md:grid-cols-2">
 
             <div className="flex items-center text-sm py-1">
               <FaCheck className="text-[#f26b38] mr-3"/>
@@ -211,7 +211,7 @@ const About = () => {
           <div>
             <div className="flex items-center mb-3">
               <FaStudiovinari className="text-[#f26b38] text-4xl mr-3"/>
-              <p className="font-semibold">Travelling</p>
+              <p className="font-semibold">Traveling</p>
             </div>
             <p className="text-sm">When I get free time I love to travel new place.</p>
           </div>
