@@ -17,7 +17,7 @@ const Main = () => {
       <Navbar />
 
       {/* Main content section */}
-      <div className='absolute top-16 bottom-16 right-[37px] left-[37px] bg-[#f5faff] overflow-hidden'>
+      <div className='absolute top-16 bottom-16 right-0 left-0 lg:right-[37px] lg:left-[37px] bg-[#f5faff] overflow-hidden'>
 
         {/* Author Image */}
         <AuthorImage />
