@@ -1,31 +1,41 @@
-import React from "react";
-import { TypeAnimation } from "react-type-animation";
+import React, { useEffect, useState } from "react";
+import './Home.css';
+import { Link } from "react-router-dom";
 
 const Home = () => {
+  const words = ['Web', 'Software', 'MERN Stack', 'Full Stack', 'Frontend'];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2000); // Change word every 2 seconds
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [words.length]);
+
+
   return (
-    <div className="h-full flex items-center justify-center">
+    <div className="flex items-center h-full">
       <div>
-        <h1 className="uppercase text text-center text-2xl sm:text-3xl md:text-4xl font-extrabold">
-          I'm Tanin Rahman
-        </h1>
-        <TypeAnimation
-          sequence={[
-            "Frontend Web Developer",
-            1000,
-            "Full Stack Web Developer",
-            1000,
-            "JavaScript Developer",
-            1000,
-            "React Developer",
-            1000,
-            "MERN Stack Web Developer",
-            1000,
-          ]}
-          speed={50}
-          className='ml-6 md:ml-14 text-sm md:text-xl'
-          wrapper="span"
-          repeat={Infinity}
-        />
+        <h1 className="uppercase text-3xl md:text-5xl lg:text-6xl text-[#333] font-extrabold">Tanin Rahman</h1>
+        <div className="w-[160px] mt-6 md:mt-8 sm:text-3xl md:text-6xl font-extrabold h-2 bg-black"></div>
+        <div className="flex text-xl md:text-2xl mt-7 md:mt-10">
+          <div className="mr-2">
+            <span
+              key={index} // Ensure React re-renders each time the word changes
+              className="flip-animation text-gray-500"
+            >
+              {words[index]}
+            </span>
+          </div>
+          <p className="text-[#333] font-medium">Developer</p>
+        </div>
+
+        <div className="mt-5">
+          <button className="bg-[#333] text-white px-5 py-2 md:p-4 font-medium hover:bg-white hover:text-[#333] border border-transparent hover:border-[#333] transition-all duration-300">
+            <Link to='/about'>Learn More</Link>
+          </button>
+        </div>
       </div>
     </div>
   );

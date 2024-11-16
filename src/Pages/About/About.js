@@ -5,13 +5,13 @@ import { FaCheck, FaMusic, FaStudiovinari } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="mt-44 mb-20 mx-auto">
+    <div className="mt-32 mb-20 mx-auto text-[#333]">
       <div className="text-center">
         <h2 className="font-extrabold uppercase text-4xl">About Me</h2>
         <p>Home / About Me</p>
       </div>
 
-      <div className="mt-24 px-2 md:px-6 w-[90%] lg:w-3/4 mx-auto">
+      <div className="mt-24 mx-auto">
         <h2 className="font-bold text-xl">About Information</h2>
         {/* Profile Information */}
         <div className="mt-5 md:mt-8 flex justify-center items-center md:items-start flex-col md:flex-row">

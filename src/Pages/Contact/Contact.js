@@ -16,7 +16,7 @@ const Contact = () => {
 
   }
   return (
-    <div className='mt-44 mb-20 w-[90%] px-3 md:w-3/4 mx-auto'>
+    <div className='mt-32 mb-20 mx-auto text-[#333]'>
     <Toaster position="top-center" reverseOrder={false}/>
        <div className='text-center'>
         <h2 className='font-extrabold uppercase text-4xl'>Contacts</h2>
@@ -30,7 +30,7 @@ const Contact = () => {
           <div className='p-4'>
            <div className='flex items-center'>
             <FaPhone className='text-[#f26b38] text-3xl mr-3 mb-2'/>
-            <h2 className='font-bold mb-2.5'>Phone</h2>
+            <h2 className='font-semibold mb-2.5'>Phone</h2>
            </div>
            <p>+880 1784933595</p>
           </div>
@@ -38,7 +38,7 @@ const Contact = () => {
           <div className='p-4'>
            <div className='flex items-center'>
             <FaAt className='text-[#f26b38] text-3xl mr-3 mb-2'/>
-            <h2 className='font-bold mb-2.5'>Email</h2>
+            <h2 className='font-semibold mb-2.5'>Email</h2>
            </div>
            <p><a className='text-[#f26b38] hover:underline' href="mailto:taninrahman21@gmail.com">taninrahman21@gmail.com</a></p>
           </div>
@@ -46,7 +46,7 @@ const Contact = () => {
           <div className='p-4'>
            <div className='flex items-center'>
             <FaFontAwesomeFlag className='text-[#f26b38] text-3xl mr-3 mb-2'/>
-            <h2 className='font-bold mb-2.5'>Address</h2>
+            <h2 className='font-semibold mb-2.5'>Address</h2>
            </div>
            <p>Dhaka, Bangladesh</p>
           </div>
@@ -57,9 +57,9 @@ const Contact = () => {
        <div className='mt-16'>
         <h3 className='font-extrabold uppercase text-xl'>Hire Me</h3>
         <form onSubmit={sendMail}>
-          <input name='name' className='block border-b focus:outline-none my-8 w-full py-4' type="text" placeholder='Name'/>
-          <input name='user-email' className='block border-b focus:outline-none my-8 w-full py-4' type="email" placeholder='Email'/>
-          <textarea className='block border-b focus:outline-none mb-5 w-full' name="message" placeholder='Massage'></textarea>
+          <input name='name' className='block bg-transparent border-b focus:outline-none my-8 w-full py-4' type="text" placeholder='Name'/>
+          <input name='user-email' className='block bg-transparent border-b focus:outline-none my-8 w-full py-4' type="email" placeholder='Email'/>
+          <textarea className='block bg-transparent border-b focus:outline-none mb-5 w-full' name="message" placeholder='Massage'></textarea>
           <input className='bg-[#f26b38] text-white px-6 py-2' type="submit" value="Send Message" />
         </form>
        </div>
