@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="mt-auto fixed bottom-[25px] left-[25px] h-16 right-[25px] bg-white z-20 flex justify-center items-center md:justify-between px-8 py-2">
+        <footer className="mt-auto fixed bottom-[25px] left-[25px] h-10 md:h-14 lg:h-16 right-[25px] bg-white z-20 flex justify-center items-center md:justify-between">
             <div className='hidden md:block'>
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com/" className="hover:underline">Tanin Rahman</a>. All rights reserved.
                 </span>

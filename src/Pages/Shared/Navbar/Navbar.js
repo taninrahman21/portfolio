@@ -8,9 +8,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed top-[25px] left-[25px] right-[25px] h-16 bg-white z-40 px-8">
+    <div className="fixed top-[25px] left-[25px] right-[25px] h-10 md:h-14 lg:h-16 bg-white z-40 px-6 md:px-8">
       <nav className="h-full">
-        <div className="flex flex-wrap justify-between items-center h-full">
+        <div className="flex justify-between items-center h-full">
           {/* Brand Name */}
           <Link
             to="/"
@@ -65,7 +65,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`fixed top-20 bottom-20 bg-white w-[200px] transition-right duration-700 ease-in-out ${open ? 'right-[25px]' : 'right-[-9999px]'
+          className={`fixed top-[65px] bottom-[65px] bg-white w-[200px] transition-right duration-500 ease-in-out ${open ? 'right-[25px]' : 'right-[-9999px]'
             }`}
         >
           {/* Author Image */}
