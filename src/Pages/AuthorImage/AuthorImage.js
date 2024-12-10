@@ -14,24 +14,24 @@ const AuthorImage = () => {
 
         if (i === 0) {
           style = {
-            clip: `rect(${Math.random() * 1800}px, 9999px, ${Math.random() * 1500}px, 0px)`,
-            right: `${Math.floor(Math.random() * 50)}px`,
-            left: `${Math.floor(Math.random() * 50)}px`,
+            clip: `rect(${Math.random() * 1800}px, 9999px, ${Math.random() * 1200}px, 0px)`,
+            right: `${Math.floor(Math.random() * 10)}px`,
+            left: `${Math.floor(Math.random() * 10)}px`,
           };
         } else if (i === 1) {
           style = {
-            clip: `rect(${Math.floor(Math.random() * 1800)}px, 9999px, ${Math.random() * 1200}px, 0px)`,
-            right: `${Math.floor(Math.random() * 40)}px`,
-            left: `${Math.floor(Math.random() * 40)}px`,
-            transform: `scale(${(0.9 + Math.random() * 0.3).toFixed(2)})`
+            clip: `rect(${Math.floor(Math.random() * 1800)}px, 9999px, ${Math.random() * 1000}px, 0px)`,
+            right: `${Math.floor(Math.random() * 10)}px`,
+            left: `${Math.floor(Math.random() * 10)}px`,
+            transform: `scale(${(0.9 + Math.random() * 0.1).toFixed(2)})`
           };
         } else if (i === 2) {
           style = {
             mixBlendMode: "hue",
-            clip: `rect(${Math.random() * 1800}px, 9999px, ${Math.random() * 1200}px, 0px)`,
-            right: `${Math.floor(Math.random() * 40)}px`,
-            left: `${Math.floor(Math.random() * 40)}px`,
-            transform: `scale(${(0.9 + Math.random() * 0.3).toFixed(2)})`
+            clip: `rect(${Math.random() * 1800}px, 9999px, ${Math.random() * 800}px, 0px)`,
+            right: `${Math.floor(Math.random() * 10)}px`,
+            left: `${Math.floor(Math.random() * 10)}px`,
+            transform: `scale(${(0.9 + Math.random() * 0.1).toFixed(2)})`
           };
         }
 
@@ -46,7 +46,7 @@ const AuthorImage = () => {
     // Set interval to update every 300ms
     const intervalId = setInterval(() => {
       createGlitches();
-    }, 250);
+    }, 400);
 
     // Cleanup interval on unmount
     return () => clearInterval(intervalId);

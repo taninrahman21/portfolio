@@ -125,13 +125,27 @@ const About = () => {
           </div>
         </div>
 
+        {/* Experience */}
+        <div className="mt-16 ">
+          <h2 className="font-bold text-xl">Experience</h2>
+           <div className="mt-6">
+
+            <div>
+              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">March 2024 - Present</p>
+              <h4 className="text-sm font-bold mt-3">Software Developer at bPlugins</h4>
+              <p className="text-sm mt-2">Developed custom WordPress block and PHP plugins using<br /> React, JavaScript,SCSS and PHP to deliver scalable and user-friendly solutions.</p>
+            </div>
+
+           </div>
+        </div>
+
         {/* Education */}
         <div className="mt-16 ">
            <h2 className="font-bold text-xl">Education</h2>
            <div className="mt-6">
 
             <div>
-              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">Aug 2018 - Present</p>
+              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">Aug 2018 - March 2023</p>
               <h4 className="text-sm font-bold mt-3">Kurigram Polytechnic Institute - Kurigram</h4>
               <p className="text-sm mt-2">Diploma in Civil Engineering</p>
             </div>

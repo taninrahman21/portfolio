@@ -9,8 +9,8 @@ const BecheDaw = () => {
   return (
     <div>
       <img src={img1} className='w-full' alt="website" />
-      <div className='w-full px-4 md:px-10 lg:p-0 lg:w-4/5 mx-auto flex justify-center items-center lg:items-start flex-col lg:flex-row mt-8 text-justify'>
-        <div className='w-full lg:w-[80%] lg:pr-8'>
+      <div className='w-full lg:p-0 mx-auto flex justify-center items-center lg:items-start flex-col lg:flex-row mt-8 text-justify'>
+        <div className='w-full xl:w-[70%] xl:pr-8'>
           <h3 className="font-bold text-xl">Description</h3>
           <div className='mt-5'>
             <h4>This a full stack website for used product sell or buy there used mobile phones easily.This website has lot of feature like...</h4>
@@ -32,7 +32,7 @@ const BecheDaw = () => {
           </div>
         </div>
 
-        <div className='w-full my-8 lg:mt-0 lg:w-1/4 lg:pr-5'>
+        <div className='w-full my-8 xl:mt-0 xl:w-[30%] xl:pr-5'>
           <h3 className="font-bold text-xl">Details</h3>
 
             <div>
