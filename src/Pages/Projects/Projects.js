@@ -31,10 +31,6 @@ const Projects = () => {
           <img className='h-[210px]' src={img2} alt="websiteImage" />
           <h3 className="text-center mt-3 font-extrabold"><Link to='/projects/smartTutor'>Service Reviewer</Link></h3>
         </div>
-        <div className='hover:text-[#f26b38]'>
-          <img className='h-[210px]' src={img3} alt="websiteImage" />
-          <h3 className="text-center mt-3 font-extrabold"><Link to='/projects/studyTrend'>A Learning Platform</Link></h3>
-        </div>
 
       </div>
     </div>
