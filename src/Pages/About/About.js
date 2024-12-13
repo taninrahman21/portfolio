@@ -57,6 +57,20 @@ const About = () => {
           </div>
         </div>
 
+        {/* Experience */}
+        <div className="mt-16 ">
+          <h2 className="font-bold text-xl">Experience</h2>
+          <div className="mt-6">
+
+            <div>
+              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">March 2024 - Present</p>
+              <h4 className="text-sm font-bold mt-3">Software Developer at bPlugins</h4>
+              <p className="text-sm mt-2">Developed custom WordPress block and PHP plugins using<br /> React, JavaScript, SCSS and PHP to deliver scalable and user-friendly solutions.</p>
+            </div>
+
+          </div>
+        </div>
+
         {/* Coding Skills */}
         <div className="mt-16 w-full">
           <h2 className="font-bold text-xl">Coding Skills</h2>
@@ -112,7 +126,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="w-full">
+            <div className="w-full mb-3">
               <div className="flex justify-between mb-2">
                 <p>Html & Css</p>
                 <p>95%</p>
@@ -122,22 +136,39 @@ const About = () => {
               </div>
             </div>
 
+            <div className="w-full mb-3">
+              <div className="flex justify-between mb-2">
+                <p>SCSS</p>
+                <p>80%</p>
+              </div>
+              <div className="w-full bg-gray-300">
+                <div className="h-1 w-[80%] bg-[#f26b38]"></div>
+              </div>
+            </div>
+
+            <div className="w-full mb-3">
+              <div className="flex justify-between mb-2">
+                <p>PHP</p>
+                <p>40%</p>
+              </div>
+              <div className="w-full bg-gray-300">
+                <div className="h-1 w-[40%] bg-[#f26b38]"></div>
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="flex justify-between mb-2">
+                <p>Database(MongoDB, Mongoose)</p>
+                <p>80%</p>
+              </div>
+              <div className="w-full bg-gray-300">
+                <div className="h-1 w-[80%] bg-[#f26b38]"></div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        {/* Experience */}
-        <div className="mt-16 ">
-          <h2 className="font-bold text-xl">Experience</h2>
-           <div className="mt-6">
-
-            <div>
-              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">March 2024 - Present</p>
-              <h4 className="text-sm font-bold mt-3">Software Developer at bPlugins</h4>
-              <p className="text-sm mt-2">Developed custom WordPress block and PHP plugins using<br /> React, JavaScript,SCSS and PHP to deliver scalable and user-friendly solutions.</p>
-            </div>
-
-           </div>
-        </div>
+       
 
         {/* Education */}
         <div className="mt-16 ">
@@ -153,7 +184,7 @@ const About = () => {
             <div className="mt-5">
               <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">June 2022 - Dec 2022</p>
               <h4 className="text-sm font-bold mt-3">Complete Web Development Course - Programming Hero</h4>
-              <p className="text-sm mt-2">I have done this course and complete almost 25+  <br />  projects where there is 4 Full Stack projects.</p>
+              <p className="text-sm mt-2">I have done this course and complete almost 20+  <br />  projects where there is 4 Full Stack projects.</p>
             </div>
 
            </div>

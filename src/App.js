@@ -8,6 +8,7 @@ import BecheDaw from './Pages/Project/BecheDaw';
 import SmartTutor from './Pages/Project/SmartTutor';
 import StudyTrend from './Pages/Project/StudyTrend';
 import Projects from './Pages/Projects/Projects';
+import Uifry from './Pages/Project/Uifry';
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
         {
           path: '/projects/studyTrend',
           element: <StudyTrend></StudyTrend>
+        },
+        {
+          path: '/projects/uifry',
+          element: <Uifry/>
         },
         {
           path: '/contact',

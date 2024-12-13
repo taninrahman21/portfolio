@@ -30,7 +30,7 @@ const Main = () => {
             timeout={1000}
           >
             <div className="w-full lg:w-4/6 xl:w-3/5 absolute right-0 top-0 bottom-0 overflow-y-auto px-6 md:px-10 lg:px-12 xl:px-20">
-              <Outlet /> {/* This renders the child routes */}
+              <Outlet />
             </div>
           </CSSTransition>
         </TransitionGroup>
