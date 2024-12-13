@@ -40,6 +40,15 @@ const Uifry = () => {
               <h4 className='font-semibold mt-3'>Code Link</h4>
               <a href="https://github.com/taninrahman21/uifry-landing-page" rel="noreferrer" target='_blank'>github.com/taninrahman21/uifry-landing-page</a>
             </div>
+
+            <div>
+              <h4 className='font-semibold mt-3'>Used Technologies</h4>
+              <ul className='list-disc ml-5'>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Fontawesome Icon</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

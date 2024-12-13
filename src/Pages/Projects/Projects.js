@@ -4,6 +4,7 @@ import img1 from '../../assets/beche-daw.png';
 import img2 from '../../assets/smart-tutor.png';
 import img3 from '../../assets/study-trend.png';
 import uifryHome from '../../assets/Uifry/uifryHome.png';
+import furneHome from '../../assets/FurneHouse/furneHome.png';
 
 const Projects = () => {
   return (
@@ -14,6 +15,10 @@ const Projects = () => {
       </div>
 
       <div className='my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='hover:text-[#f26b38]'>
+          <img className='h-[210px]' src={furneHome} alt="websiteImage" />
+          <h3 className="text-center mt-3 font-extrabold"><Link to='/projects/furne-house'>Furne House - A eCommerce Website</Link></h3>
+        </div>
         <div className='hover:text-[#f26b38]'>
           <img className='h-[210px]' src={uifryHome} alt="websiteImage" />
           <h3 className="text-center mt-3 font-extrabold"><Link to='/projects/uifry'>Uifry - A Landing Page</Link></h3>

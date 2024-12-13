@@ -9,6 +9,7 @@ import SmartTutor from './Pages/Project/SmartTutor';
 import StudyTrend from './Pages/Project/StudyTrend';
 import Projects from './Pages/Projects/Projects';
 import Uifry from './Pages/Project/Uifry';
+import FurneHouse from './Pages/Project/FurneHouse';
 
 function App() {
   const router = createBrowserRouter([
@@ -37,12 +38,12 @@ function App() {
           element: <SmartTutor></SmartTutor>
         },
         {
-          path: '/projects/studyTrend',
-          element: <StudyTrend></StudyTrend>
-        },
-        {
           path: '/projects/uifry',
           element: <Uifry/>
+        },
+        {
+          path: '/projects/furne-house',
+          element: <FurneHouse/>
         },
         {
           path: '/contact',
