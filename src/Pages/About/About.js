@@ -228,6 +228,14 @@ const About = () => {
               <FaCheck className="text-[#f26b38] mr-3"/>
               <p>Quick Learning</p>
             </div>
+            <div className="flex items-center text-sm py-1">
+              <FaCheck className="text-[#f26b38] mr-3"/>
+              <p>Gutenberg Block Development</p>
+            </div>
+            <div className="flex items-center text-sm py-1">
+              <FaCheck className="text-[#f26b38] mr-3"/>
+              <p>Wordpress Plugin Development</p>
+            </div>
 
            </div>
         </div>

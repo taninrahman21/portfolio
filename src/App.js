@@ -5,11 +5,10 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
 import BecheDaw from './Pages/Project/BecheDaw';
-import SmartTutor from './Pages/Project/SmartTutor';
-import StudyTrend from './Pages/Project/StudyTrend';
 import Projects from './Pages/Projects/Projects';
 import Uifry from './Pages/Project/Uifry';
 import FurneHouse from './Pages/Project/FurneHouse';
+import Unique from './Pages/Project/Unique';
 
 function App() {
   const router = createBrowserRouter([
@@ -34,8 +33,8 @@ function App() {
           element: <BecheDaw></BecheDaw>
         },
         {
-          path: '/projects/smartTutor',
-          element: <SmartTutor></SmartTutor>
+          path: '/projects/unique',
+          element: <Unique></Unique>
         },
         {
           path: '/projects/uifry',

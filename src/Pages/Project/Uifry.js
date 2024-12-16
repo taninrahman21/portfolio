@@ -14,7 +14,7 @@ const Uifry = () => {
           <div className='mt-5'>
             <h4>This is a visually appealing, responsive landing page designed for a modern user experience. Key features include:</h4>
             <ul className='list-disc ml-5 mt-3'>
-              <li className='mb-2'>The entire design is handcrafted using raw HTML and CSS, showcasing meticulous attention to detail.</li>
+              <li className='mb-2'>The entire design is handcrafted using raw HTML and CSS and JavaScript, showcasing meticulous attention to detail.</li>
               <li className='mb-2'>A responsive layout that ensures compatibility across all devices, providing a seamless user experience.</li>
               <li className='mb-2'>Interactive elements to engage users and effectively highlight the platform's purpose.</li>
               <li className='mb-2'>Fast-loading pages, ensuring users can access information quickly and efficiently.</li>
@@ -46,6 +46,7 @@ const Uifry = () => {
               <ul className='list-disc ml-5'>
                 <li>HTML</li>
                 <li>CSS</li>
+                <li>JavaScript</li>
                 <li>Fontawesome Icon</li>
               </ul>
             </div>
