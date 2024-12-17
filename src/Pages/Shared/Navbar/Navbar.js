@@ -53,7 +53,9 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="https://drive.google.com/file/d/1mml-5tbGmERS65eaqPaRmj8-_e1sMJl1/view?usp=share_link"
+                  target='_blank'
+                  rel='noreferrer'
+                  href="https://drive.google.com/file/d/1trw4LWAXJigZBF2RoeHXo04fUBNSScdI/view?usp=sharing"
                   className="hover:text-[#f26b38]"
                 >
                   Download Resume
@@ -112,8 +114,10 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://drive.google.com/file/d/1mml-5tbGmERS65eaqPaRmj8-_e1sMJl1/view?usp=share_link"
+                href="https://drive.google.com/file/d/1CjlytY4_nipvTKNP1k0vaZIuROAEOMHq/view?usp=sharing"
                 className="hover:text-[#f26b38]"
+                target='_blank'
+                rel='noreferrer'
                 onClick={() => setOpen(false)}
               >
                 Download Resume

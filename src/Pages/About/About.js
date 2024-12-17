@@ -1,7 +1,7 @@
 import React from "react";
-import profile from "../../assets/profile.jpg";
-import "react-sweet-progress/lib/style.css";
 import { FaCheck, FaMusic, FaStudiovinari } from "react-icons/fa";
+import "react-sweet-progress/lib/style.css";
+import profile from "../../assets/profile.jpg";
 
 const About = () => {
   return (
@@ -50,8 +50,12 @@ const About = () => {
             </div>
 
             <button className="px-4 mt-4 py-2 block mx-auto md:mx-0 bg-[#f26b38] text-white">
-              <a href='https://drive.google.com/file/d/1mml-5tbGmERS65eaqPaRmj8-_e1sMJl1/view?usp=share_link'>
-              Download Resume
+              <a
+                href='https://drive.google.com/file/d/1trw4LWAXJigZBF2RoeHXo04fUBNSScdI/view?usp=sharing'
+                target='_blank'
+                rel='noreferrer'
+              >
+                Download Resume
               </a>
             </button>
           </div>
@@ -168,12 +172,12 @@ const About = () => {
           </div>
         </div>
 
-       
+
 
         {/* Education */}
         <div className="mt-16 ">
-           <h2 className="font-bold text-xl">Education</h2>
-           <div className="mt-6">
+          <h2 className="font-bold text-xl">Education</h2>
+          <div className="mt-6">
 
             <div>
               <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">Aug 2018 - March 2023</p>
@@ -187,90 +191,90 @@ const About = () => {
               <p className="text-sm mt-2">I have done this course and complete almost 20+  <br />  projects where there is 4 Full Stack projects.</p>
             </div>
 
-           </div>
+          </div>
         </div>
 
         {/* Knowledge */}
         <div className="mt-16 ">
-           <h2 className="font-bold text-xl">Knowledge</h2>
+          <h2 className="font-bold text-xl">Knowledge</h2>
 
-           <div className="mt-5 grid grid-cols-1 md:grid-cols-2">
+          <div className="mt-5 grid grid-cols-1 md:grid-cols-2">
 
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Responsive Web Design</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>UI/UX Disign</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Mern Stack Web Development</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Frontend Web Development</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Full Stack Web Development</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Modern and mobile-ready</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Fast Problem Solution</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Quick Learning</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Gutenberg Block Development</p>
             </div>
             <div className="flex items-center text-sm py-1">
-              <FaCheck className="text-[#f26b38] mr-3"/>
+              <FaCheck className="text-[#f26b38] mr-3" />
               <p>Wordpress Plugin Development</p>
             </div>
 
-           </div>
+          </div>
         </div>
 
-      {/* Interests */}
-      <div className="mt-16 ">
-         <h2 className="font-bold text-xl">Interests</h2>
-         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Interests */}
+        <div className="mt-16 ">
+          <h2 className="font-bold text-xl">Interests</h2>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <div>
-            <div className="flex items-center mb-3">
-              <FaStudiovinari className="text-[#f26b38] text-4xl mr-3"/>
-              <p className="font-semibold">Learn New Technologies</p>
+            <div>
+              <div className="flex items-center mb-3">
+                <FaStudiovinari className="text-[#f26b38] text-4xl mr-3" />
+                <p className="font-semibold">Learn New Technologies</p>
+              </div>
+              <p className="text-sm">I love learning when something new comes out.</p>
             </div>
-            <p className="text-sm">I love learning when something new comes out.</p>
-          </div>
 
-          <div>
-            <div className="flex items-center mb-3">
-              <FaMusic className="text-[#f26b38] text-4xl mr-3"/>
-              <p className="font-semibold">Music</p>
+            <div>
+              <div className="flex items-center mb-3">
+                <FaMusic className="text-[#f26b38] text-4xl mr-3" />
+                <p className="font-semibold">Music</p>
+              </div>
+              <p className="text-sm">I love to listen music.When I get bore I listen music and feel so fresh.</p>
             </div>
-            <p className="text-sm">I love to listen music.When I get bore I listen music and feel so fresh.</p>
-          </div>
 
-          <div>
-            <div className="flex items-center mb-3">
-              <FaStudiovinari className="text-[#f26b38] text-4xl mr-3"/>
-              <p className="font-semibold">Traveling</p>
+            <div>
+              <div className="flex items-center mb-3">
+                <FaStudiovinari className="text-[#f26b38] text-4xl mr-3" />
+                <p className="font-semibold">Traveling</p>
+              </div>
+              <p className="text-sm">When I get free time I love to travel new place.</p>
             </div>
-            <p className="text-sm">When I get free time I love to travel new place.</p>
-          </div>
 
-         </div>
-      </div>
+          </div>
+        </div>
 
 
       </div>
