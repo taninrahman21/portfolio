@@ -51,7 +51,7 @@ const About = () => {
 
             <button className="px-4 mt-4 py-2 block mx-auto md:mx-0 bg-[#f26b38] text-white">
               <a
-                href='https://drive.google.com/file/d/1trw4LWAXJigZBF2RoeHXo04fUBNSScdI/view?usp=sharing'
+                href='https://drive.google.com/file/d/1sb3MW0pshbvDPX8wIbfGzAXnpTBOMU-E/view?usp=sharing'
                 target='_blank'
                 rel='noreferrer'
               >

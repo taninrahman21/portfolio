@@ -55,7 +55,7 @@ const Navbar = () => {
                 <a
                   target='_blank'
                   rel='noreferrer'
-                  href="https://drive.google.com/file/d/1trw4LWAXJigZBF2RoeHXo04fUBNSScdI/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1sb3MW0pshbvDPX8wIbfGzAXnpTBOMU-E/view?usp=sharing"
                   className="hover:text-[#f26b38]"
                 >
                   Download Resume
