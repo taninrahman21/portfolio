@@ -4,7 +4,6 @@ import Main from './Layout/Main';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Home from './Pages/Home/Home';
-import BecheDaw from './Pages/Project/BecheDaw';
 import Projects from './Pages/Projects/Projects';
 import Uifry from './Pages/Project/Uifry';
 import FurneHouse from './Pages/Project/FurneHouse';
@@ -27,10 +26,6 @@ function App() {
         {
           path: '/projects',
           element: <Projects></Projects>
-        },
-        {
-          path: '/projects/becheDaw',
-          element: <BecheDaw></BecheDaw>
         },
         {
           path: '/projects/unique',
