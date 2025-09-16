@@ -1,8 +1,8 @@
-import { Twirl as Hamburger } from 'hamburger-react';
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import taninImage from '../../../assets/authorImage.jpeg';
-import './Navbar.css';
+import { Twirl as Hamburger } from "hamburger-react";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import taninImage from "../../../assets/authorImage.jpeg";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,12 +21,8 @@ const Navbar = () => {
 
           {/* Toggler Button for Mobile */}
           <div className="rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700">
-            <Hamburger
-              color="#000" toggled={open} toggle={setOpen}
-              size={24}
-            />
+            <Hamburger color="#000" toggled={open} toggle={setOpen} size={24} />
           </div>
-
 
           {/* Links Section for Large Screens */}
           <div className="hidden md:flex md:w-auto">
@@ -53,9 +49,9 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  target='_blank'
-                  rel='noreferrer'
-                  href="https://drive.google.com/file/d/1sb3MW0pshbvDPX8wIbfGzAXnpTBOMU-E/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://drive.google.com/file/d/1pS5omHWzZK2S_18ypQxqTxaQd-dGWwMv/view?usp=sharing"
                   className="hover:text-[#f26b38]"
                 >
                   Download Resume
@@ -67,8 +63,9 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`fixed top-[65px] bottom-[65px] bg-white w-[200px] transition-right duration-500 ease-in-out ${open ? 'right-[25px]' : 'right-[-9999px]'
-            }`}
+          className={`fixed top-[65px] bottom-[65px] bg-white w-[200px] transition-right duration-500 ease-in-out ${
+            open ? "right-[25px]" : "right-[-9999px]"
+          }`}
         >
           {/* Author Image */}
           <div className="mt-10 mb-10 flex justify-end mr-5">
@@ -114,10 +111,10 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="https://drive.google.com/file/d/1CjlytY4_nipvTKNP1k0vaZIuROAEOMHq/view?usp=sharing"
+                href="https://drive.google.com/file/d/1pS5omHWzZK2S_18ypQxqTxaQd-dGWwMv/view?usp=sharing"
                 className="hover:text-[#f26b38]"
-                target='_blank'
-                rel='noreferrer'
+                target="_blank"
+                rel="noreferrer"
                 onClick={() => setOpen(false)}
               >
                 Download Resume

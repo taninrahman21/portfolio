@@ -31,7 +31,7 @@ const About = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5 place-items-center md:place-items-start mt-8 md:mt-16 text-sm">
               <p className="pb-2">
-                <span className="text-[#f26b38]">Age:</span> 21
+                <span className="text-[#f26b38]">Age:</span> 23
               </p>
               <p className="pb-2">
                 <span className="text-[#f26b38]">Residence:</span> Bangladesh
@@ -51,9 +51,9 @@ const About = () => {
 
             <button className="px-4 mt-4 py-2 block mx-auto md:mx-0 bg-[#f26b38] text-white">
               <a
-                href='https://drive.google.com/file/d/1sb3MW0pshbvDPX8wIbfGzAXnpTBOMU-E/view?usp=sharing'
-                target='_blank'
-                rel='noreferrer'
+                href="https://drive.google.com/file/d/1pS5omHWzZK2S_18ypQxqTxaQd-dGWwMv/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
               >
                 Download Resume
               </a>
@@ -65,13 +65,21 @@ const About = () => {
         <div className="mt-16 ">
           <h2 className="font-bold text-xl">Experience</h2>
           <div className="mt-6">
-
             <div>
-              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">March 2024 - Present</p>
-              <h4 className="text-sm font-bold mt-3">Software Developer at bPlugins</h4>
-              <p className="text-sm mt-2">Developed custom WordPress block and PHP plugins using<br /> React, JavaScript, SCSS and PHP to deliver scalable and user-friendly solutions.</p>
+              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">
+                March 2024 - Present
+              </p>
+              <h4 className="text-sm font-bold mt-3">
+                Software Developer at bPlugins
+              </h4>
+              <p className="text-sm mt-2">
+                Experienced WordPress Plugin Developer with a strong focus on
+                custom Gutenberg block development using React.js, PHP, SCSS,
+                and modern build tools like Webpack and Gulp. Skilled in
+                developing scalable and optimized WordPress solutions tailored
+                to user experience and performance.
+              </p>
             </div>
-
           </div>
         </div>
 
@@ -79,7 +87,6 @@ const About = () => {
         <div className="mt-16 w-full">
           <h2 className="font-bold text-xl">Coding Skills</h2>
           <div className="flex flex-wrap items-center mt-8">
-
             <div className="w-full mb-3">
               <div className="flex justify-between mb-2">
                 <p>React</p>
@@ -168,29 +175,35 @@ const About = () => {
                 <div className="h-1 w-[80%] bg-[#f26b38]"></div>
               </div>
             </div>
-
           </div>
         </div>
-
-
 
         {/* Education */}
         <div className="mt-16 ">
           <h2 className="font-bold text-xl">Education</h2>
           <div className="mt-6">
-
             <div>
-              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">Aug 2018 - March 2023</p>
-              <h4 className="text-sm font-bold mt-3">Kurigram Polytechnic Institute - Kurigram</h4>
+              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">
+                Aug 2018 - March 2023
+              </p>
+              <h4 className="text-sm font-bold mt-3">
+                Kurigram Polytechnic Institute - Kurigram
+              </h4>
               <p className="text-sm mt-2">Diploma in Civil Engineering</p>
             </div>
 
             <div className="mt-5">
-              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">June 2022 - Dec 2022</p>
-              <h4 className="text-sm font-bold mt-3">Complete Web Development Course - Programming Hero</h4>
-              <p className="text-sm mt-2">I have done this course and complete almost 20+  <br />  projects where there is 4 Full Stack projects.</p>
+              <p className="border border-[#f26b38] px-2 py-1 text-sm w-fit">
+                June 2022 - Dec 2022
+              </p>
+              <h4 className="text-sm font-bold mt-3">
+                Complete Web Development Course - Programming Hero
+              </h4>
+              <p className="text-sm mt-2">
+                I have done this course and complete almost 20+ <br /> projects
+                where there is 4 Full Stack projects.
+              </p>
             </div>
-
           </div>
         </div>
 
@@ -199,7 +212,14 @@ const About = () => {
           <h2 className="font-bold text-xl">Knowledge</h2>
 
           <div className="mt-5 grid grid-cols-1 md:grid-cols-2">
-
+            <div className="flex items-center text-sm py-1">
+              <FaCheck className="text-[#f26b38] mr-3" />
+              <p>Wordpress Plugin Development</p>
+            </div>
+            <div className="flex items-center text-sm py-1">
+              <FaCheck className="text-[#f26b38] mr-3" />
+              <p>Gutenberg Block Development</p>
+            </div>
             <div className="flex items-center text-sm py-1">
               <FaCheck className="text-[#f26b38] mr-3" />
               <p>Responsive Web Design</p>
@@ -240,7 +260,6 @@ const About = () => {
               <FaCheck className="text-[#f26b38] mr-3" />
               <p>Wordpress Plugin Development</p>
             </div>
-
           </div>
         </div>
 
@@ -248,13 +267,14 @@ const About = () => {
         <div className="mt-16 ">
           <h2 className="font-bold text-xl">Interests</h2>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
             <div>
               <div className="flex items-center mb-3">
                 <FaStudiovinari className="text-[#f26b38] text-4xl mr-3" />
                 <p className="font-semibold">Learn New Technologies</p>
               </div>
-              <p className="text-sm">I love learning when something new comes out.</p>
+              <p className="text-sm">
+                I love learning when something new comes out.
+              </p>
             </div>
 
             <div>
@@ -262,7 +282,10 @@ const About = () => {
                 <FaMusic className="text-[#f26b38] text-4xl mr-3" />
                 <p className="font-semibold">Music</p>
               </div>
-              <p className="text-sm">I love to listen music.When I get bore I listen music and feel so fresh.</p>
+              <p className="text-sm">
+                I love to listen music.When I get bore I listen music and feel
+                so fresh.
+              </p>
             </div>
 
             <div>
@@ -270,13 +293,12 @@ const About = () => {
                 <FaStudiovinari className="text-[#f26b38] text-4xl mr-3" />
                 <p className="font-semibold">Traveling</p>
               </div>
-              <p className="text-sm">When I get free time I love to travel new place.</p>
+              <p className="text-sm">
+                When I get free time I love to travel new place.
+              </p>
             </div>
-
           </div>
         </div>
-
-
       </div>
     </div>
   );
