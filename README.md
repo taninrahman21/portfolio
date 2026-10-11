@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Tanin Rahman — portfolio (being-incredibble)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The site from the "Colourful version" / "Minimal — my own style" design, built with React + Vite.
 
-## Available Scripts
+## Run it
 
-In the project directory, you can run:
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # production files in dist/
+npm run preview    # serve the built dist/ locally
+```
 
-### `npm start`
+Needs Node 20 or newer.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Switch between the two designs
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open `src/data.js` and set:
 
-### `npm test`
+```js
+export const THEME = "colorful"; // or "minimal"
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To compare without editing, add `?theme=minimal` or `?theme=colorful` to the URL.
 
-### `npm run build`
+## Edit the content
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Every word on the site lives in **`src/data.js`**: hero text, about, what I can do, experience,
+skills, courses, the eight releases and the recommendations. The four recommendations are still
+placeholders; paste the real ones there.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For each course in `courses`, fill in `year`, `provider`, `note` and, if you have one, a
+certificate link in `href`. Put a banner image in `public/photos/` and set `banner` to its path;
+without one, the card shows a drawn tile.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To add an earlier job, add a second object to `experience` with the same shape. Set
+`earlierRolePlaceholder` to `""` to hide the dashed "add a role" row.
 
-### `npm run eject`
+## Photos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `public/photos/tanin-about.jpg` is the full-bleed hero photo.
+- `public/photos/tanin.png` is the portrait in About and the footer.
+- `public/my-site-hand-icon.jpg` is the plugin icon.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Replace a file with the same name to change a photo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## What's where
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `src/components/Nav.jsx`: the segmented boxed navbar, plus the phone menu
+- `src/components/Hero.jsx`: the full-bleed photo that folds into a panel ("Meet Tanin")
+- `src/components/Sections.jsx`: statement, about, what I can do, experience, skills, courses,
+  the sticky release stack, the looping recommendation deck, contact and the footer
+- `src/styles.css`: all styling; desktop first, with the phone layout under `@media (max-width: 900px)`
+- `src/theme.js`: the colours that cycle per card in each theme
 
-## Learn More
+## Deploy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run `npm run build` and upload the `dist/` folder to any static host (Netlify, Vercel,
+GitHub Pages, cPanel). No server is needed.

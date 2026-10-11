@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
+# Tanin Rahman — portfolio
+# Everything here is public. Crawl it.
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Agents: a short, structured tour of this site lives at /llms.txt

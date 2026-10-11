@@ -1,0 +1,43 @@
+# Tanin Rahman
+
+Product engineer in Dhaka, Bangladesh. Core developer on eight production
+WordPress products at bPlugins, running on 50,000+ active sites. Owns the whole
+lifecycle: Gutenberg block architecture, PHP backends, admin UI, security
+patches, releases and WordPress.org support.
+
+## Contact
+
+- [Email](mailto:builtbytanin@gmail.com): builtbytanin@gmail.com
+- [Phone](tel:+8801784933595): +88 01784933595
+- [LinkedIn](https://www.linkedin.com/in/taninrahman21/)
+- [GitHub](https://github.com/taninrahman21)
+- [WordPress.org profile](https://profiles.wordpress.org/taninrahman/)
+
+## Featured work
+
+- [My Site Hand](https://wordpress.org/plugins/my-site-hand/): built and owned
+  end to end — 46 WordPress capabilities exposed over the Model Context Protocol
+  and the Abilities API, plus an MCP server, Site Health diagnostics and an
+  in-admin AI assistant.
+
+## Shipped at bPlugins
+
+- [PDF Poster](https://wordpress.org/plugins/pdf-poster/): 20,000+ installs
+- [Advance Custom HTML](https://wordpress.org/plugins/advance-custom-html/): 10,000+ installs
+- [Document Embedder](https://wordpress.org/plugins/document-emberdder/): 10,000+ installs
+- [Timeline Block](https://wordpress.org/plugins/timeline-block/): 3,000+ installs
+- [Document Viewer](https://wordpress.org/plugins/embed-office-viewer/): 2,000+ installs
+- [B Timeline](https://wordpress.org/plugins/b-timeline/): 2,000+ installs
+- [StreamCast](https://wordpress.org/plugins/streamcast/): 1,000+ installs
+- [Voice Feedback](https://wordpress.org/plugins/voice-feedback/): newest release
+
+## Skills
+
+- Product surface: Gutenberg blocks, WordPress Block API, React, SCSS, JavaScript ES2023
+- Under the hood: PHP 8, WordPress core APIs, REST API, MySQL, security patching
+- AI layer: Model Context Protocol, Abilities API, agent tooling, prompt and tool design
+- The unlisted half: forum support, release management, docs, mentoring, feature planning
+
+## Status
+
+Open to roles. Replies within a day, UTC+6.
