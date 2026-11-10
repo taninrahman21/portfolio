@@ -29,11 +29,20 @@ export function loadAnalytics() {
   }
 
   if (CLARITY_ID) {
-    /* Microsoft's loader: queues calls until the real script arrives */
-    window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
-    document.head.appendChild(s);
+    /* Clarity sets third-party cookies (clarity.ms, bing.com) and does a fair bit
+     * of main-thread work, so it waits for the visitor's first scroll, click, tap
+     * or key press. Everyone who engages is still recorded; a visitor who leaves
+     * without touching the page is only counted by Umami. */
+    const events = ["scroll", "pointerdown", "keydown", "touchstart"];
+    const start = () => {
+      events.forEach((e) => window.removeEventListener(e, start));
+      /* Microsoft's loader: queues calls until the real script arrives */
+      window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
+      document.head.appendChild(s);
+    };
+    events.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
   }
 }

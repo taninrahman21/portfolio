@@ -14,7 +14,7 @@ export const person = {
   city: "Dhaka, Bangladesh",
   /* the live address, e.g. "https://builtbytanin.com" — no trailing slash.
    * `npm run build` uses it to write /.well-known/ard.json for AI agents. */
-  site: "",
+  site: "https://builtbytanin.netlify.app",
   email: "builtbytanin@gmail.com",
   phone: "+88 01784933595",
   phoneHref: "+8801784933595",
