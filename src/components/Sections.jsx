@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { about, capabilities, contact, courses, experience, nav, person, recommendations, releases, skills, socials, spotlight, statement } from "../data";
+import { about, ai, capabilities, contact, courses, experience, nav, person, products, recommendations, releases, skills, socials, spotlight, statement } from "../data";
 import { palette, pick } from "../theme";
 import { ArrowRight, ArrowUp, ArrowUpRight, Check, Github } from "./Icons";
 import Motif from "./Motif";
+import { track } from "../analytics";
 
 const Label = ({ n, children }) => (
   <span className="label"><b>{n}</b><i />{children}</span>
@@ -35,8 +36,8 @@ export function Spotlight() {
         <p className="spot-blurb">{accent(spotlight.blurb, spotlight.accents)}</p>
         <div className="tags">{spotlight.tags.map((t) => <span key={t}>{t}</span>)}</div>
         <div className="spot-actions">
-          <a className="btn" href={spotlight.source} target="_blank" rel="noreferrer"><Github /> View the source</a>
-          <a className="spot-link" href={spotlight.directory} target="_blank" rel="noreferrer">On WordPress.org <ArrowUpRight /></a>
+          <a className="btn" href={spotlight.source} target="_blank" rel="noreferrer" {...track("project-click", { project: spotlight.name, link: "source" })}><Github /> View the source</a>
+          <a className="spot-link" href={spotlight.directory} target="_blank" rel="noreferrer" {...track("project-click", { project: spotlight.name, link: "wordpress.org" })}>On WordPress.org <ArrowUpRight /></a>
         </div>
       </div>
 
@@ -131,7 +132,7 @@ export function Capabilities() {
             <div>
               <b>{c.title}</b>
               <span>{c.body}</span>
-              {c.proof && <a className="proof" href={c.proof.href} target="_blank" rel="noreferrer"><img src={person.pluginIcon} alt="" />{c.proof.label} <ArrowUpRight /></a>}
+              {c.proof && <a className="proof" href={c.proof.href} target="_blank" rel="noreferrer" {...track("project-click", { project: c.proof.label, where: "capabilities" })}><img src={person.pluginIcon} alt="" />{c.proof.label} <ArrowUpRight /></a>}
             </div>
           </div>
         ))}
@@ -189,6 +190,82 @@ export function Skills() {
   );
 }
 
+/* Where AI sits in my work: a seven-step flow, three lists, proof, and the tools. */
+const Who = ({ k }) => <span className={`ai-who ai-who-${k}`}>{ai.who[k]}</span>;
+const Video = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="ai-video-icon">
+    <rect x="2.5" y="5" width="19" height="14" rx="4" /><path d="m10 9.5 5 2.5-5 2.5z" />
+  </svg>
+);
+
+export function AI() {
+  const { plugin, site, video } = ai.proof;
+  const groups = ai.toolkit.groups.filter((g) => g.items.length);
+  return (
+    <section id="ai" className="section wrap ai">
+      <div className="ai-head">
+        <div><Label n="06">How I use AI</Label><h2 className="h2">{ai.title}</h2></div>
+        <p className="lead">{ai.lead}</p>
+      </div>
+
+      <div className="ai-flow-wrap">
+        <div className="ai-flow-top">
+          <span>{ai.flowLabel}</span>
+          <span className="ai-legend">who does it: <Who k="me" /><Who k="ai" /><Who k="both" /></span>
+        </div>
+        <ol className="ai-flow">
+          {ai.steps.map((s, i) => (
+            <li key={s.title} className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
+              <span className="ai-n">{String(i + 1).padStart(2, "0")}</span>
+              <b>{s.title}</b>
+              <span className="ai-body">{s.body}</span>
+              <span className="ai-chip"><Who k={s.who} /></span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="ai-cols">
+        {ai.columns.map((c) => (
+          <div className="ai-col reveal" key={c.title}>
+            <b>{c.title}</b>
+            <ul>{c.items.map((t) => <li key={t}><i />{t}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="ai-proof">
+        <a href={plugin.href} target="_blank" rel="noreferrer" className="ai-plugin" {...track("ai-link-click", { link: plugin.title })}>
+          <img src={person.pluginIcon} alt="" width="48" height="48" loading="lazy" />
+          <span className="ai-proof-copy"><span className="ai-kicker">{plugin.kicker}</span><b>{plugin.title}</b><span>{plugin.body}</span></span>
+          <ArrowUpRight />
+        </a>
+        <div><span className="ai-proof-copy"><span className="ai-kicker">{site.kicker}</span><b>{site.title}</b><span>{site.body}</span></span></div>
+        <div>
+          <span className="ai-proof-copy">
+            <span className="ai-kicker">{video.kicker}</span>
+            <b className="ai-video-title"><Video />{video.title}</b>
+            <span>{video.body}</span>
+            <span className="ai-links">
+              {video.links.map((l) => <a key={l.href} className="ai-cta" href={l.href} target="_blank" rel="noreferrer" {...track("ai-link-click", { link: l.label })}>{l.label} ↗</a>)}
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div className="ai-kit">
+        <div className="ai-kit-head"><b>{ai.toolkit.title}</b><span>{ai.toolkit.note}</span></div>
+        {groups.map((g) => (
+          <div key={g.group}>
+            <span className="ai-kicker">{g.group}</span>
+            <div className="tags">{g.items.map((t) => <span key={t}>{t}</span>)}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* Drawn tile used when a course has no banner image yet. */
 function CourseArt({ kind, a, b }) {
   return (
@@ -218,7 +295,7 @@ export function Courses() {
   return (
     <section id="courses" className="section wrap split">
       <div className="split-head">
-        <Label n="06">Courses</Label>
+        <Label n="07">Courses</Label>
         <h2 className="h2">Courses I actually finished.</h2>
         <p className="lead">Where the fundamentals came from, before any of the products did.</p>
       </div>
@@ -227,7 +304,7 @@ export function Courses() {
           const [a, b] = pick(pal.courseArt, i);
           const Tag = c.href ? "a" : "div";
           return (
-            <Tag key={c.name} className="course reveal" style={{ background: pick(pal.courseBg, i) }} {...(c.href ? { href: c.href, target: "_blank", rel: "noreferrer" } : {})}>
+            <Tag key={c.name} className="course reveal" style={{ background: pick(pal.courseBg, i) }} {...(c.href ? { href: c.href, target: "_blank", rel: "noreferrer", ...track("certificate-click", { course: c.name }) } : {})}>
               <div className="course-art">
                 {c.banner ? <img src={c.banner} alt={`${c.name} course banner`} loading="lazy" /> : <CourseArt kind={c.art} a={a} b={b} />}
               </div>
@@ -245,36 +322,52 @@ export function Courses() {
   );
 }
 
-/* The eight releases pin one after another as you scroll — pure CSS sticky. */
+const TrendUp = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8M15 7h6v6" /></svg>
+);
+
+/* The four products I lead pin one after another as you scroll — pure CSS
+   sticky — and the four I handed off sit in a box underneath. */
 export function Releases() {
   const pal = palette();
+  const off = products.handedOff;
   return (
     <section id="work" className="section wrap split">
       <div className="split-head sticky">
-        <Label n="07">Projects at bPlugins</Label>
-        <h2 className="h2">Eight releases.<br /><span style={{ color: "#6a6a75" }}>All still live.</span></h2>
-        <p className="lead">50,000+ active installs between them. Owned by bPlugins; built, shipped and supported by me.</p>
+        <Label n="08">Products at bPlugins</Label>
+        <h2 className="h2">{products.title}<br /><span className="h2-muted">{products.titleMuted}</span></h2>
+        <p className="lead">{products.lead}</p>
+        <span className="work-stat">{products.stat}</span>
       </div>
-      <div className="split-body stack">
-        {releases.map((p, i) => (
-          <div className="stack-item" key={p.name} style={{ "--i": i }}>
-            <article className="release" style={{ background: pick(pal.releaseBg, i) }}>
-              <div className="release-copy">
-                <div className="release-top"><b>{String(i + 1).padStart(2, "0")}</b><span>{p.installs}</span></div>
-                <h3>{p.name}</h3>
-                <p>{p.pitch} {p.contribution}</p>
-                <div className="tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
-                <div className="release-foot">
-                  <span>★ {p.rating ? `${p.rating.toFixed(1)} on WordPress.org` : "Live on WordPress.org"}</span>
-                  <a href={p.href} target="_blank" rel="noreferrer">WordPress.org <ArrowUpRight /></a>
+      <div className="split-body">
+        <div className="stack">
+          {releases.map((p, i) => (
+            <div className="stack-item" key={p.name} style={{ "--i": i }}>
+              <article className="release" style={{ background: pick(pal.releaseBg, i) }}>
+                <div className="release-copy">
+                  <div className="release-top"><b>{String(i + 1).padStart(2, "0")}</b><span>{p.installs}</span></div>
+                  {p.badge && <span className="release-badge"><TrendUp />{p.badge}</span>}
+                  <h3>{p.name}</h3>
+                  <p>{p.pitch}</p>
+                  <ul className="release-points">{p.points.map((t) => <li key={t}><i />{t}</li>)}</ul>
+                  <div className="release-foot">
+                    <span>★ {p.rating ? `${p.rating.toFixed(1)} on WordPress.org` : "Live on WordPress.org"}</span>
+                    <a href={p.href} target="_blank" rel="noreferrer" {...track("project-click", { project: p.name, where: "releases" })}>WordPress.org <ArrowUpRight /></a>
+                  </div>
                 </div>
-              </div>
-              <div className="release-art">
-                <Motif kind={p.motif} ink={pick(pal.releaseInk, i)} panel={pick(pal.releasePanel, i)} accent={pal.releaseAccent} />
-              </div>
-            </article>
+                <div className="release-art">
+                  <Motif kind={p.motif} ink={pick(pal.releaseInk, i)} panel={pick(pal.releasePanel, i)} accent={pal.releaseAccent} />
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+        <div className="handoff">
+          <div className="handoff-head"><b>{off.title}</b><span className="handoff-count">{off.count}</span><span className="handoff-note">{off.note}</span></div>
+          <div className="handoff-links">
+            {off.items.map((it) => <a key={it.href} href={it.href} target="_blank" rel="noreferrer" {...track("project-click", { project: it.name, where: "handoff" })}>{it.name} <ArrowUpRight /></a>)}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
@@ -304,7 +397,7 @@ export function Recommendations() {
   return (
     <section id="reviews" className="section wrap" style={{ display: "flex", flexDirection: "column", gap: 48 }}>
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        <Label n="08">Recommendations</Label>
+        <Label n="09">Recommendations</Label>
         <h2 className="h2">Reviewed by the people I ship with.</h2>
       </div>
       <div className="deck">
@@ -334,21 +427,21 @@ export function Recommendations() {
 export function Contact() {
   return (
     <section id="contact" className="contact">
-      <Label n="09">Contact</Label>
+      <Label n="10">Contact</Label>
       <h2>{contact.title}</h2>
       <div className="contact-row">
         <div className="contact-lines">
-          <a className="contact-mail" href={`mailto:${person.email}`}>{person.email} <ArrowUpRight /></a>
-          <a className="contact-phone" href={`tel:${person.phoneHref}`}>{person.phone} <ArrowUpRight /></a>
+          <a className="contact-mail" href={`mailto:${person.email}`} {...track("email-click", { where: "contact" })}>{person.email} <ArrowUpRight /></a>
+          <a className="contact-phone" href={`tel:${person.phoneHref}`} {...track("phone-click", { where: "contact" })}>{person.phone} <ArrowUpRight /></a>
         </div>
-        <div className="contact-links">{socials.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noreferrer">{s.label}</a>)}</div>
+        <div className="contact-links">{socials.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" {...track("social-click", { network: s.label, where: "contact" })}>{s.label}</a>)}</div>
       </div>
     </section>
   );
 }
 
 export function Footer() {
-  const links = [...nav, { label: "Courses", href: "#courses" }, { label: "Reviews", href: "#reviews" }, { label: "Contact", href: "#contact" }];
+  const links = [...nav, { label: "How I use AI", href: "#ai" }, { label: "Courses", href: "#courses" }, { label: "Reviews", href: "#reviews" }, { label: "Contact", href: "#contact" }];
   return (
     <footer className="footer">
       <div className="foot-box">
@@ -358,8 +451,8 @@ export function Footer() {
           <div className="foot-me"><img src={person.avatar} width="40" height="40" alt="" loading="lazy" decoding="async" /><span><strong>Thanks for scrolling this far.</strong><em><i className="dot" />Open to roles</em></span></div>
         </div>
         <div className="foot-nav"><span className="foot-h">navigate</span><div className="foot-links">{links.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}</div></div>
-        <div className="foot-el"><span className="foot-h">elsewhere</span><div className="foot-links">{socials.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noreferrer">{s.label} <ArrowUpRight /></a>)}</div></div>
-        <div className="foot-mailbox"><span className="foot-h">say hello</span><a className="foot-mail" href={`mailto:${person.email}`}>{person.email}</a><a className="foot-mail" href={`tel:${person.phoneHref}`}>{person.phone}</a><span className="muted" style={{ fontSize: 14, lineHeight: 1.6 }}>{person.city}<br />UTC+6 · replies within a day</span></div>
+        <div className="foot-el"><span className="foot-h">elsewhere</span><div className="foot-links">{socials.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" {...track("social-click", { network: s.label, where: "footer" })}>{s.label} <ArrowUpRight /></a>)}</div></div>
+        <div className="foot-mailbox"><span className="foot-h">say hello</span><a className="foot-mail" href={`mailto:${person.email}`} {...track("email-click", { where: "footer" })}>{person.email}</a><a className="foot-mail" href={`tel:${person.phoneHref}`} {...track("phone-click", { where: "footer" })}>{person.phone}</a><span className="muted" style={{ fontSize: 14, lineHeight: 1.6 }}>{person.city}<br />UTC+6 · replies within a day</span></div>
       </div>
       <div className="foot-bar">
         <span>© {new Date().getFullYear()} Tanin Rahman · Designed &amp; built in Dhaka</span>

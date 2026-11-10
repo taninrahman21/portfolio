@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import { About, Capabilities, Contact, Courses, Experience, Footer, Recommendations, Releases, Skills, Spotlight, Statement } from "./components/Sections";
+import { About, AI, Capabilities, Contact, Courses, Experience, Footer, Recommendations, Releases, Skills, Spotlight, Statement } from "./components/Sections";
 
 export default function App() {
   // fade blocks in as they scroll into view
@@ -26,6 +26,7 @@ export default function App() {
         <Capabilities />
         <Experience />
         <Skills />
+        <AI />
         <Courses />
         <Releases />
         <Recommendations />

@@ -6,6 +6,7 @@ import "@fontsource-variable/jetbrains-mono";
 import "./styles.css";
 import App from "./App.jsx";
 import { THEME } from "./data.js";
+import { loadAnalytics } from "./analytics.js";
 
 /* Theme: "colorful" or "minimal". Set it in src/data.js, or try the other one
  * without editing anything by opening the site with ?theme=minimal */
@@ -21,3 +22,5 @@ const tree = (
 /* `npm run build` prerenders the page, so attach to that markup when it is there */
 if (root.firstChild) hydrateRoot(root, tree);
 else createRoot(root).render(tree);
+
+loadAnalytics();

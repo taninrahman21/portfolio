@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { nav, person } from "../data";
 import { ArrowUpRight, Menu } from "./Icons";
+import { track } from "../analytics";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -33,14 +34,14 @@ export default function Nav() {
             <a key={n.href} href={n.href} className={active === n.href ? "on" : undefined}>{n.label}</a>
           ))}
         </nav>
-        <a className="nav-cta" href={`mailto:${person.email}`}>Let’s talk <ArrowUpRight /></a>
+        <a className="nav-cta" href={`mailto:${person.email}`} {...track("email-click", { where: "nav" })}>Let’s talk <ArrowUpRight /></a>
         <button className="nav-menu" type="button" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}><Menu /></button>
       </div>
       {open && (
         <div className="menu-sheet" role="dialog" aria-label="Menu">
           <button className="menu-close" type="button" onClick={() => setOpen(false)}>Close</button>
           {nav.map((n) => <a key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</a>)}
-          <a href={`mailto:${person.email}`} onClick={() => setOpen(false)}>Let’s talk ↗</a>
+          <a href={`mailto:${person.email}`} onClick={() => setOpen(false)} {...track("email-click", { where: "mobile-menu" })}>Let’s talk ↗</a>
         </div>
       )}
     </header>

@@ -12,6 +12,9 @@ export const person = {
   last: "RAHMAN",
   role: "Product engineer",
   city: "Dhaka, Bangladesh",
+  /* the live address, e.g. "https://builtbytanin.com" — no trailing slash.
+   * `npm run build` uses it to write /.well-known/ard.json for AI agents. */
+  site: "",
   email: "builtbytanin@gmail.com",
   phone: "+88 01784933595",
   phoneHref: "+8801784933595",
@@ -83,7 +86,7 @@ export const capabilities = {
 
 export const experience = [
   {
-    period: "2023 — Present",
+    period: "March 2024 — Present",
     type: "Full-time · Dhaka, Bangladesh",
     company: "bPlugins",
     role: "Core Plugin Developer",
@@ -108,6 +111,78 @@ export const skills = [
   { group: "The AI layer", items: ["Model Context Protocol", "Abilities API", "Agent tooling", "Prompt & tool design"] },
   { group: "The unlisted half", items: ["Forum support", "Release management", "Docs & readmes", "Mentoring", "Feature planning"] },
 ];
+
+/* How I use AI. `who` on each step picks its chip: "me" | "ai" | "both".
+ * A toolkit group with no items is left out, so fill in `video` when you can. */
+export const ai = {
+  title: "AI writes a lot of my first drafts. I own every line that ships.",
+  lead: "I use AI every day, the way I use a debugger: on purpose, and with checks. Here is exactly where it sits in my work, and where it doesn’t.",
+  flowLabel: "how a feature goes from idea to shipped",
+  who: { me: "me", ai: "AI, I steer", both: "me + AI" },
+  steps: [
+    { title: "Analyse the feature", body: "AI digs through user requests, competitors and edge cases.", who: "both" },
+    { title: "Decide if it’s buildable", body: "Scope, effort, risk. I say yes, no, or not yet.", who: "me" },
+    { title: "Write the spec", body: "What it does, what it must never do, how we know it works.", who: "me" },
+    { title: "Plan and first draft", body: "AI drafts the plan and the first pass of code from my spec.", who: "ai" },
+    { title: "Review every diff", body: "I read it all. Nothing merges because it looks right.", who: "me" },
+    { title: "Test on real sites", body: "AI lists the edge cases. I run them on real WordPress installs.", who: "both" },
+    { title: "Ship and support", body: "Releases, changelogs and the forum replies are mine.", who: "me" },
+  ],
+  columns: [
+    {
+      title: "Where it earns its place",
+      items: [
+        "Feature analysis: user requests, competitors, what it would take",
+        "First drafts of blocks, admin screens and PHP handlers from a written spec",
+        "Edge-case and test lists before I test by hand",
+        "A second pair of eyes on security: escaping, nonces, capability checks",
+        "Readmes, docs and translations, which I then edit",
+        "Exploring options fast: this portfolio went through dozens of AI-made layouts",
+      ],
+    },
+    {
+      title: "What stays mine",
+      items: [
+        "Deciding if a feature is buildable, and worth building",
+        "Architecture and data design",
+        "Reading every line before it ships",
+        "Testing on real sites, across PHP and WordPress versions",
+        "Talking to the people who use the product",
+      ],
+    },
+    {
+      title: "Where I don’t trust it",
+      items: [
+        "Security-critical code it can’t explain line by line",
+        "Anything it can’t run or verify",
+        "Facts, numbers and API details without a source",
+        "Final decisions on what users see",
+      ],
+    },
+  ],
+  proof: {
+    plugin: { kicker: "I build for AI, not just with it", title: "My Site Hand", body: "An MCP server that lets AI agents read, diagnose and act on a real WordPress site, with permission checks on every action.", href: "https://wordpress.org/plugins/my-site-hand/" },
+    site: { kicker: "this site", title: "Designed with Claude, decided by me", body: "AI proposed dozens of layouts, navbars and heroes. I rejected most of them, picked a few, and directed every change you see here." },
+    /* swap in the full playlist URL */
+    video: {
+      kicker: "beyond code", title: "I explain my work on video",
+      body: "Short videos made with AI tools, walking through what I build and why. Scripted and checked by me.",
+      links: [
+        { label: "Tutorial playlist made for bPlugins", href: "https://www.youtube.com/playlist?list=PLPcKO-fKtAYY" },
+        { label: "My channel", href: "https://www.youtube.com/@builtbytanin" },
+      ],
+    },
+  },
+  toolkit: {
+    title: "My AI toolkit",
+    note: "what I actually open every day",
+    groups: [
+      { group: "build", items: ["Claude Code", "Antigravity", "GitHub Copilot"] },
+      { group: "think & write", items: ["Claude", "ChatGPT", "Gemini"] },
+      { group: "video", items: [] },
+    ],
+  },
+};
 
 /* Courses — add the year, the provider and a certificate link when you have them.
  * `banner` is optional: drop an image in public/photos/ and put its path here;
@@ -155,16 +230,32 @@ export const spotlight = {
   ],
 };
 
-/* motif: doc | code | timeline | bars | wave */
+/* Products at bPlugins: the four I lead today get a card each (they stack as
+ * you scroll); the four I handed off sit in the box underneath.
+ * motif: doc | code | timeline | bars | wave · `badge` is optional */
+export const products = {
+  title: "Eight built.",
+  titleMuted: "Four I lead today.",
+  lead: "The four I lead now are on the right. The other four I built or grew, then handed to developers I mentored. All owned by bPlugins.",
+  stat: "8 built · 4 led today · 50,000+ sites",
+  handedOff: {
+    title: "Built or grew, now maintained by developers I mentored",
+    count: "4 handed off",
+    note: "Handed off with docs and pairing, so they keep shipping without me.",
+    items: [
+      { name: "Advance Custom HTML", href: "https://wordpress.org/plugins/advance-custom-html/" },
+      { name: "Timeline Block", href: "https://wordpress.org/plugins/timeline-block/" },
+      { name: "Timeline", href: "https://wordpress.org/plugins/b-timeline/" },
+      { name: "StreamCast", href: "https://wordpress.org/plugins/streamcast/" },
+    ],
+  },
+};
+
 export const releases = [
-  { name: "PDF Poster", installs: "20,000+ installs", rating: 4.5, motif: "doc", pitch: "Let visitors read PDFs without leaving the page.", contribution: "Plugin development, block integration and admin UI.", tags: ["Gutenberg", "PDF.js", "React"], href: "https://wordpress.org/plugins/pdf-poster/" },
-  { name: "Advance Custom HTML", installs: "10,000+ installs", rating: null, motif: "code", pitch: "Write and preview custom HTML inside the editor.", contribution: "Built the React editor, live preview and syntax highlighting.", tags: ["React", "CodeMirror"], href: "https://wordpress.org/plugins/advance-custom-html/" },
-  { name: "Document Embedder", installs: "10,000+ installs", rating: 4.9, motif: "doc", pitch: "Let visitors read files without downloading.", contribution: "Admin dashboard redesign, block UI and shortcodes.", tags: ["Gutenberg", "Shortcodes"], href: "https://wordpress.org/plugins/document-emberdder/" },
-  { name: "Timeline Block", installs: "3,000+ installs", rating: null, motif: "timeline", pitch: "Tell a story down the page, or across it.", contribution: "Layout engine, horizontal timeline and the v2 release.", tags: ["Layout engine", "SCSS"], href: "https://wordpress.org/plugins/timeline-block/" },
-  { name: "Document Viewer", installs: "2,000+ installs", rating: 4.7, motif: "doc", pitch: "View files right in the browser.", contribution: "Viewer block, settings UI and compatibility fixes.", tags: ["Gutenberg", "Embeds"], href: "https://wordpress.org/plugins/embed-office-viewer/" },
-  { name: "B Timeline", installs: "2,000+ installs", rating: null, motif: "timeline", pitch: "Vertical or horizontal, styled your way.", contribution: "Vertical and horizontal layouts, plus the styling system.", tags: ["Layouts", "Styling"], href: "https://wordpress.org/plugins/b-timeline/" },
-  { name: "StreamCast", installs: "1,000+ installs", rating: 4.8, motif: "bars", pitch: "Bring live radio to your site with a sleek player.", contribution: "Player block UI and the streaming embed.", tags: ["Audio", "JavaScript"], href: "https://wordpress.org/plugins/streamcast/" },
-  { name: "Voice Feedback", installs: "Newest release", rating: 5.0, motif: "wave", pitch: "Let visitors speak their minds in seconds.", contribution: "Built from scratch — admin UI, playback and recording.", tags: ["MediaRecorder", "REST API"], href: "https://wordpress.org/plugins/voice-feedback/" },
+  { name: "PDF Poster", badge: "bPlugins’ fastest-growing product", installs: "20,000+ installs", rating: 4.5, motif: "doc", pitch: "Let visitors read PDFs without leaving the page.", points: ["5 viewer modes, including Flipbook, Scroll and Slider", "Privacy-first analytics and logo or text watermarking", "Fixed mobile, CJK and CDN loading; secured REST and AJAX"], href: "https://wordpress.org/plugins/pdf-poster/" },
+  { name: "Document Embedder", installs: "9,000+ installs", rating: 4.9, motif: "doc", pitch: "Let visitors read files without downloading.", points: ["Read-only AI agent access through the Abilities API and MCP", "3D flipbook, email gate with a leads dashboard, Box integration", "Fixed a stored XSS issue and hardened downloads"], href: "https://wordpress.org/plugins/document-emberdder/" },
+  { name: "Document Viewer", installs: "2,000+ installs", rating: 4.7, motif: "code", pitch: "View files right in the browser.", points: ["Rebuilt block settings in plain language", "Shortcodes now render through the block engine", "Closed content-protection bypasses"], href: "https://wordpress.org/plugins/embed-office-viewer/" },
+  { name: "Voice Feedback", installs: "New", rating: 5.0, motif: "wave", pitch: "Let visitors speak their minds in seconds.", points: ["Built from scratch: drawer, block, shortcode and audio library", "Email alerts with recordings, moved to the REST API", "Email gate and Cloudflare Turnstile spam protection"], href: "https://wordpress.org/plugins/voice-feedback/" },
 ];
 
 /* Recommendations, written on LinkedIn. Quotes are verbatim — `quote` is a list

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { person, socials } from "../data";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Download, Github, Linkedin } from "./Icons";
+import { track } from "../analytics";
 
 const link = (label) => socials.find((s) => s.label === label)?.href;
 
@@ -35,9 +36,9 @@ export default function Hero() {
         <div className="hero-cta">
           <button className="hero-meet" type="button" onClick={() => setOpen(true)} tabIndex={open ? -1 : 0}>Meet Tanin <ArrowRight /></button>
           <div className="hero-links">
-            <a className="hero-icon" href={link("GitHub")} target="_blank" rel="noreferrer" aria-label="GitHub" tabIndex={open ? -1 : 0}><Github /></a>
-            <a className="hero-icon" href={link("LinkedIn")} target="_blank" rel="noreferrer" aria-label="LinkedIn" tabIndex={open ? -1 : 0}><Linkedin /></a>
-            <a className="hero-resume" href={person.resume} download tabIndex={open ? -1 : 0}>Resume <Download /></a>
+            <a className="hero-icon" href={link("GitHub")} target="_blank" rel="noreferrer" aria-label="GitHub" {...track("social-click", { network: "GitHub", where: "hero" })} tabIndex={open ? -1 : 0}><Github /></a>
+            <a className="hero-icon" href={link("LinkedIn")} target="_blank" rel="noreferrer" aria-label="LinkedIn" {...track("social-click", { network: "LinkedIn", where: "hero" })} tabIndex={open ? -1 : 0}><Linkedin /></a>
+            <a className="hero-resume" href={person.resume} download tabIndex={open ? -1 : 0} {...track("resume-download", { where: "hero" })}>Resume <Download /></a>
           </div>
         </div>
       </div>
@@ -47,8 +48,8 @@ export default function Hero() {
         <p>{person.heroIntro}</p>
         <div className="hero-actions">
           <a className="btn" href="#work" tabIndex={open ? 0 : -1}>See the releases</a>
-          <a className="hero-resume" href={person.resume} download tabIndex={open ? 0 : -1}>Resume <Download /></a>
-          <a className="text-link" href="#contact" tabIndex={open ? 0 : -1}>Hire me <ArrowUpRight /></a>
+          <a className="hero-resume" href={person.resume} download tabIndex={open ? 0 : -1} {...track("resume-download", { where: "hero-panel" })}>Resume <Download /></a>
+          <a className="text-link" href="#contact" tabIndex={open ? 0 : -1} {...track("hire-me-click", { where: "hero-panel" })}>Hire me <ArrowUpRight /></a>
         </div>
         <button className="hero-back-m" type="button" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}><ArrowLeft />Back to photo</button>
       </div>
