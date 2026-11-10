@@ -19,6 +19,23 @@ if (link) {
   await rm(resolve("dist", link[1].replace(/^\//, "")), { force: true });
 }
 
+/* Start the bundle once the hero photo has painted, not alongside it. The
+ * prerendered page is complete without it, and on a slow phone connection the
+ * photo no longer shares bandwidth with 80 KB of script. Trigger: the browser's
+ * own largest-contentful-paint event where it exists (Chrome, Edge, Firefox),
+ * else two frames after `load` (Safari), and a timer for background tabs,
+ * where frames never fire. The loader sits at the end of <body>, so #root is
+ * parsed before React looks for it. */
+const entry = html.match(/<script type="module" crossorigin src="([^"]+)"><\/script>/);
+if (!entry) throw new Error("dist/index.html has no module entry script");
+html = html.replace(entry[0], "");
+const loader = `<script>(function(){var done=0;function go(){if(done++)return;var s=document.createElement("script");s.type="module";s.src=${JSON.stringify(entry[1])};document.head.appendChild(s)}` +
+  `var lcp=window.PerformanceObserver&&PerformanceObserver.supportedEntryTypes&&PerformanceObserver.supportedEntryTypes.indexOf("largest-contentful-paint")>-1;` +
+  `if(lcp)new PerformanceObserver(function(l,o){o.disconnect();setTimeout(go,0)}).observe({type:"largest-contentful-paint",buffered:true});` +
+  `else addEventListener("load",function(){requestAnimationFrame(function(){requestAnimationFrame(go)})});` +
+  `setTimeout(go,lcp?2500:1500)})()</script>`;
+html = html.replace("</body>", `${loader}\n</body>`);
+
 await writeFile("dist/index.html", html);
 
 /* ARD manifest: tells AI agents where the machine-readable parts of the site

@@ -1,8 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
-import "@fontsource-variable/bricolage-grotesque";
-import "@fontsource-variable/geist";
-import "@fontsource-variable/jetbrains-mono";
+import "./fonts.css";
 import "./styles.css";
 import App from "./App.jsx";
 import { THEME } from "./data.js";
